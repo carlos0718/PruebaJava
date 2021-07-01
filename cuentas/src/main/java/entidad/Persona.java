@@ -21,7 +21,7 @@ public class Persona {
 	private Date fechaNac;
 	private String direccion;
 	private String email;	
-	
+	private TipoDeCuenta tipoCuenta;
 	
 	public Persona() {
 		// TODO Auto-generated constructor stub
@@ -40,7 +40,7 @@ public class Persona {
 	 * @param email
 	 */
 	public Persona(int dni, int cuil, String nombre, String apellido, Genero idGenero, Nacionalidad idNac,
-			Localidad idLocalidad, Date fechaNac, String direccion, String email) {
+			Localidad idLocalidad, Date fechaNac, String direccion, String email, TipoDeCuenta tipoCuenta) {
 		super();
 		this.dni = dni;
 		this.cuil = cuil;
@@ -52,6 +52,7 @@ public class Persona {
 		this.fechaNac = fechaNac;
 		this.direccion = direccion;
 		this.email = email;
+		this.tipoCuenta = tipoCuenta;
 	}
 	
 	/**
@@ -192,6 +193,19 @@ public class Persona {
 	 */
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	/**
+	 * @return the tipoCuenta
+	 */
+	public TipoDeCuenta getTipoCuenta() {
+		return tipoCuenta;
+	}
+
+	/**
+	 * @param tipoCuenta the tipoCuenta to set
+	 */
+	public void setTipoCuenta(TipoDeCuenta tipoCuenta) {
+		this.tipoCuenta = tipoCuenta;
 	}
 	
 	@Override

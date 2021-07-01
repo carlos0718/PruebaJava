@@ -104,7 +104,7 @@ public class PersonaBanco {
 
 	@Override
 	public String toString() {
-		return "PersonaBanco [id=" + id + ", nombre=" + nombre + ", password=" + password + ", fecCreacion="
+		return "PersonaBancoDaoImpl [id=" + id + ", nombre=" + nombre + ", password=" + password + ", fecCreacion="
 				+ fecCreacion + ", dni=" + dni + "]";
 	}
 }

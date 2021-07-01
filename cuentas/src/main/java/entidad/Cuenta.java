@@ -10,6 +10,8 @@ public class Cuenta {
 	private Date fecCreacion;
 	private float saldo;
 	private Persona dniPersona;
+	private Persona cuilPersona;
+	
 	
 	public Cuenta() {
 		// TODO Auto-generated constructor stub
@@ -22,8 +24,9 @@ public class Cuenta {
 	 * @param fecCreacion
 	 * @param saldo
 	 * @param dniPersona
+	 * @param cuilPersona
 	 */
-	public Cuenta(int id, TipoDeCuenta idCuenta, long cbu, Date fecCreacion, float saldo, Persona dniPersona) {
+	public Cuenta(int id, TipoDeCuenta idCuenta, long cbu, Date fecCreacion, float saldo, Persona dniPersona, Persona cuilPersona) {
 		super();
 		this.id = id;
 		this.idCuenta = idCuenta;
@@ -31,6 +34,7 @@ public class Cuenta {
 		this.fecCreacion = fecCreacion;
 		this.saldo = saldo;
 		this.dniPersona = dniPersona;
+		this.cuilPersona = cuilPersona;
 	}
 	
 	
@@ -119,10 +123,25 @@ public class Cuenta {
 	}
 	
 
+	/**
+	 * @return the cuilPersona
+	 */
+	public Persona getCuilPersona() {
+		return cuilPersona;
+	}
+
+	/**
+	 * @param cuilPersona the cuilPersona to set
+	 */
+	public void setCuilPersona(Persona cuilPersona) {
+		this.cuilPersona = cuilPersona;
+	}
+
 	@Override
 	public String toString() {
 		return "Cuenta [id=" + id + ", idCuenta=" + idCuenta + ", cbu=" + cbu + ", fecCreacion=" + fecCreacion
-				+ ", saldo=" + saldo + ", dniPersona=" + dniPersona + "]";
+				+ ", saldo=" + saldo + ", dniPersona=" + dniPersona + ", cuilPersona=" + cuilPersona + "]";
 	}
+
 	
 }

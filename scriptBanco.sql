@@ -273,7 +273,26 @@ CREATE TABLE IF NOT EXISTS `db_banco`.`Prestamos` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
+CREATE TABLE `db_banco`.`altacuenta` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `user_dni` INT UNSIGNED NOT NULL,
+  `tipo_cuenta` INT  UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `user_dni_UNIQUE` (`user_dni` ASC) VISIBLE,
+  CONSTRAINT `user_dni`
+    FOREIGN KEY (`user_dni`)
+    REFERENCES `db_banco`.`usuario` (`DNI`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `tipo_cuenta`
+    FOREIGN KEY (`tipo_cuenta`)
+    REFERENCES `db_banco`.`tipo_cuenta` (`ID_tipo_cuenta`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+);
+  
+drop table `db_banco`.`altacuenta`;
+  
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
